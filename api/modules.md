@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[validate-docs.ts:26](https://github.com/carlosedupm/ceial-learn-english/blob/cda9f10/scripts/validate-docs.ts#L26)
+[validate-docs.ts:26](https://github.com/carlosedupm/ceial-learn-english/blob/d3c12e5/scripts/validate-docs.ts#L26)
 
 ## Functions
 
@@ -50,4 +50,4 @@ True se o JSDoc estiver válido
 
 #### Defined in
 
-[validate-docs.ts:10](https://github.com/carlosedupm/ceial-learn-english/blob/cda9f10/scripts/validate-docs.ts#L10)
+[validate-docs.ts:10](https://github.com/carlosedupm/ceial-learn-english/blob/d3c12e5/scripts/validate-docs.ts#L10)
