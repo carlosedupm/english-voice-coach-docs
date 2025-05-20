@@ -8,7 +8,7 @@
 
 > `const` **\_test**: `object`
 
-Defined in: [validate-docs.ts:26](https://github.com/carlosedupm/ceial-learn-english/blob/e2dd9c491872de3b87cdecb073576c2b23c33b2d/scripts/validate-docs.ts#L26)
+Defined in: [validate-docs.ts:26](https://github.com/carlosedupm/ceial-learn-english/blob/f47152fa4e84623678a5986a67ef79490a7a251b/scripts/validate-docs.ts#L26)
 
 ## Type declaration
 
