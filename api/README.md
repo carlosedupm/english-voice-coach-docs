@@ -1,59 +1,45 @@
-ceial-learn-english / [Exports](modules.md)
+English Voice Coach API
 
-# Ceial Scripts
+# English Voice Coach API - v1.0.0
 
-Scripts para automação de documentação e validação de código.
+## Table of contents
 
-## Instalação
+### Variables
 
-```bash
-pip install -e .
-```
+- [\_test](README.md#_test)
 
-## Uso
+### Functions
 
-Principais comandos:
+- [validateComponent](README.md#validatecomponent)
 
-- Gerar documentação:
-  ```bash
-  ceial-docs
-  ```
+## Variables
 
-- Validar documentação:
-  ```bash
-  ceial-validate
-  ```
+### \_test
 
-- Rodar backups:
-  ```bash
-  ceial-backup
-  ```
+• `Const` **\_test**: `Object`
 
-## Testes
+#### Type declaration
 
-```bash
-pytest scripts/test_*.py
-```
+| Name | Type |
+| :------ | :------ |
+| `validateComponent` | (`filePath`: `string`) => `boolean` |
 
-### Testes específicos
+## Functions
 
-- Parser de regras:
-  ```bash
-  python scripts/test_parser.py .cline/rules/dev/jsdoc-rules.cl
-  ```
+### validateComponent
 
-- Engine de regras:
-  ```bash
-  python scripts/test_engine.py .cline/rules/dev/jsdoc-rules.cl
-  ```
+▸ **validateComponent**(`filePath`): `boolean`
 
-- Validação de documentação:
-  ```bash
-  pytest scripts/test_rule_engine.py -v
-  ```
+Valida se um componente possui JSDoc com todas as tags requeridas
 
-## Estrutura
+#### Parameters
 
-- `.cline/`: Configurações e regras
-- `scripts/`: Código fonte
-- `docs/`: Documentação gerada
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filePath` | `string` | Caminho do arquivo a ser validado |
+
+#### Returns
+
+`boolean`
+
+True se o JSDoc estiver válido
