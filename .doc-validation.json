@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "required_jsdoc_tags": ["description", "props"],
+    "min_examples": 1,
+    "component_coverage": {
+      "required": 0.8,
+      "warning": 0.6
+    }
+  },
+  "ignore_patterns": ["**/*.test.*", "**/*.stories.*"],
+  "living_docs_path": "docs/living/components"
+}

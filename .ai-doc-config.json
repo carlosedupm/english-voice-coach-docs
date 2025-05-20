@@ -1,0 +1,39 @@
+{
+  "enable_typedoc": true,
+  "typedoc_config": "typedoc.json",
+  "validation_rules": {
+    "required_sections": ["description", "examples", "usage", "ai_integration"],
+    "api_coverage": 0.9,
+    "component_coverage": 0.95,
+    "cline_integration": {
+      "enabled": true,
+      "rules_path": "../.cline/rules",
+      "strict_mode": true,
+      "react_rules": ["props-validation", "hooks-docs"]
+    }
+  },
+  "auto_sync": {
+    "enabled": true,
+    "triggers": ["push", "pull_request", "merge"],
+    "notify_ai": true,
+    "validate_before_sync": true
+  },
+  "templates": {
+    "component": "templates/component.md.hbs",
+    "api": "templates/api.md.hbs", 
+    "master": "templates/project-master-template.md",
+    "component_advanced": "templates/component-template.md",
+    "hook": "templates/hook.md.hbs",
+    "context": "templates/context.md.hbs",
+    "ai_integration": "templates/ai-integration.md.hbs"
+  },
+  "validation": {
+    "master_template": {
+      "required_sections": ["1", "2", "4", "ai_integration"]
+    },
+    "component_template": {
+      "required_rules": ["component-props-validation", "ai-usage"]
+    },
+    "strict": true
+  }
+}
