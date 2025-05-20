@@ -4,10 +4,68 @@ description: "Modelo para documentação de componentes seguindo regras .cline"
 category: templates
 ---
 
+## Descrição
+Este template define a estrutura padrão para documentação de componentes, incluindo:
+- Metadados obrigatórios
+- Especificação de props
+- Exemplos de uso
+- Integração com ferramentas de validação
+
+## Exemplos
+```tsx
+// Exemplo básico de implementação
+function MyComponent({ title }) {
+  return <button>{title}</button>
+}
+```
+
+## Uso
+1. Copie este template para um novo arquivo .md
+2. Preencha todas as seções obrigatórias
+3. Execute a validação com:
+```bash
+npm run validate-docs
+```
+
+## Integração com IA
+Este template é compatível com:
+- Geração automática via IA
+- Validação de conformidade
+- Análise estática de componentes
+
+> Documento Base: `v1_ContextGeneratorPrompt.md`  
+> **Última Atualização**: 20/05/2025, 18:36 (UTC)
+
 # Template de Componente  
 *(v2.0 - Integrado com .cline e AI)*  
 
-`<!-- AI-TEMPLATE:component -->`  
+`<!-- AI-TEMPLATE:component -->`
+
+## AI Integration
+Este template é usado para:
+- Geração automática de documentação via IA
+- Validação de componentes seguindo padrões .cline
+- Integração com ferramentas de análise estática
+
+## Documento Base
+`v1_ContextGeneratorPrompt.md`
+
+## Trecho Relevante
+```tsx
+// Exemplo de implementação do componente
+function MyComponent({ props }) {
+  return <div>{props.children}</div>
+}
+```
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de integração (pendente)
+
 
 ---
 

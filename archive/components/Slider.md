@@ -4,6 +4,9 @@ description: Componente deslizante para seleção de valores
 category: components
 ---
 
+> Documento Base: `v1_ContextGeneratorPrompt.md`  
+> **Última Atualização**: 20/05/2025, 18:35 (UTC)
+
 # Slider
 
 ## Purpose
@@ -14,6 +17,15 @@ Componente para seleção de valores em um intervalo com:
 
 ## AI Integration
 Este componente utiliza:
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de acessibilidade (pendente)
+
 - IA para ajuste automático de sensibilidade baseado no dispositivo
 - Detecção de padrões de uso para otimizar experiência
 - Análise de contraste para garantir visibilidade

@@ -4,6 +4,9 @@ description: Componente de campo de entrada com validação integrada
 category: components
 ---
 
+> Documento Base: `v1_ContextGeneratorPrompt.md`  
+> **Última Atualização**: 20/05/2025, 18:30 (UTC)
+
 # Input
 
 ## Purpose
@@ -14,6 +17,15 @@ Componente de entrada de texto com:
 
 ## AI Integration
 Este componente utiliza:
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de validação (pendente)
+
 - Análise de padrões de entrada via IA
 - Detecção automática de tipos (email, telefone, etc)
 - Sugestões de máscaras baseadas em contexto

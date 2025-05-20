@@ -4,6 +4,9 @@ description: Componente de botão acessível com múltiplas variantes
 category: components
 ---
 
+> Documento Base: `v1_ContextGeneratorPrompt.md`  
+> **Última Atualização**: 20/05/2025, 18:30 (UTC)
+
 # Button
 
 ## Purpose
@@ -14,6 +17,15 @@ Componente de botão reutilizável com:
 
 ## AI Integration
 Este componente utiliza o sistema de design ShadCN que foi otimizado para:
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de acessibilidade (pendente)
+
 - Geração automática de variantes via IA
 - Análise de contraste de cores para acessibilidade
 - Sugestões de micro-interações baseadas em uso

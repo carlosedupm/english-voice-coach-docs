@@ -4,7 +4,24 @@ description: Componente que fornece feedback de pronúncia comparando fala do us
 category: components
 ---
 
+> Documento Base: `v1_ContextGeneratorPrompt.md`  
+> **Última Atualização**: 20/05/2025, 18:35 (UTC)
+
 # PronunciationFeedback
+
+## AI Integration
+Este componente utiliza:
+- Whisper API para transcrição de áudio
+- Modelos de NLP para análise de pronúncia
+- Comparação fonética baseada em IA
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de integração (pendente)
 
 ```tsx
 import { PronunciationFeedback } from '@/components/PronunciationFeedback';
