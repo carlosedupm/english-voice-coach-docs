@@ -1,6 +1,4 @@
-**ceial-learn-english v1.0.0**
-
-***
+ceial-learn-english / [Exports](modules.md)
 
 # Ceial Scripts
 
