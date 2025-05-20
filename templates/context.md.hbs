@@ -1,0 +1,80 @@
+# {{contextName}} Context
+
+{{description}}
+
+## Provider
+```typescript
+<{{contextName}}Provider 
+  value={{
+    {{#each values}}
+    {{this.name}}: {{this.defaultValue}},
+    {{/each}}
+  }}
+>
+  {children}
+</{{contextName}}Provider>
+```
+
+## Hook
+```typescript
+function use{{contextName}}() {
+  const context = useContext({{contextName}}Context)
+  if (!context) {
+    throw new Error('use{{contextName}} must be used within a {{contextName}}Provider')
+  }
+  return context
+}
+```
+
+## Valores Padrão
+| Nome | Tipo | Descrição | Default |
+|------|------|-----------|---------|
+{{#each values}}
+| {{this.name}} | {{this.type}} | {{this.description}} | {{this.defaultValue}} |
+{{/each}}
+
+## Exemplo de Uso
+```typescript
+function App() {
+  return (
+    <{{contextName}}Provider
+      value={{
+        {{#each values}}
+        {{this.name}}: {{this.exampleValue}},
+        {{/each}}
+      }}
+    >
+      <ChildComponent />
+    </{{contextName}}Provider>
+  )
+}
+
+function ChildComponent() {
+  const { {{#each values}}{{this.name}}{{#unless @last}}, {{/unless}}{{/each}} } = use{{contextName}}()
+  // ...
+}
+```
+
+## Boas Práticas
+- {{#each bestPractices}}
+- {{this}} {{/each}}
+
+## Testes
+```typescript
+describe('{{contextName}}', () => {
+  it('should provide default values', () => {
+    const wrapper = ({ children }) => (
+      <{{contextName}}Provider>
+        {children}
+      </{{contextName}}Provider>
+    )
+
+    const { result } = renderHook(() => use{{contextName}}(), { wrapper })
+    
+    expect(result.current).toEqual({
+      {{#each values}}
+      {{this.name}}: {{this.defaultValue}},
+      {{/each}}
+    })
+  })
+})

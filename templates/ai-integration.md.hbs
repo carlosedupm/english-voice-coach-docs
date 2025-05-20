@@ -1,0 +1,54 @@
+---
+title: "AI Integration"
+category: "architecture"
+---
+
+# {{title}}
+
+## Model Usage
+```json
+{
+  "model": "{{model}}",
+  "version": "{{version}}",
+  "purpose": "{{purpose}}",
+  "input_schema": {{json input_schema}},
+  "output_schema": {{json output_schema}}
+}
+```
+
+## Implementation Details
+### Integration Points
+1. **Pre-processing**: {{pre_processing}}
+2. **Post-processing**: {{post_processing}}
+3. **Error Handling**: {{error_handling}}
+
+### Performance Metrics
+| Metric          | Target | Current |
+|-----------------|--------|---------|
+| Latency         | {{latency_target}}ms | {{latency_current}}ms |
+| Accuracy        | {{accuracy_target}}% | {{accuracy_current}}% |
+| Cost per Query  | \${{cost_target}} | \${{cost_current}} |
+
+## Examples
+### Request
+```typescript
+{{#each examples}}
+// {{description}}
+{{code}}
+
+{{/each}}
+```
+
+## Monitoring
+```mermaid
+graph TD
+    A[Input] --> B[Model]
+    B --> C[Output]
+    C --> D[Logging]
+    D --> E[Analytics]
+```
+
+## Ethical Considerations
+1. **Bias Mitigation**: {{bias_mitigation}}
+2. **Data Privacy**: {{data_privacy}}
+3. **Transparency**: {{transparency}}

@@ -1,0 +1,38 @@
+---
+title: {{name}}
+description: {{description}}
+category: api
+---
+
+# {{method}} {{path}}
+
+```ts
+{{> signature}}
+```
+
+## Parameters
+
+{{#each parameters}}
+### {{name}}
+- **Type**: {{type}}
+- **Required**: {{required}}
+- **Description**: {{description}}
+{{/each}}
+
+## Response
+
+```ts
+{{> response}}
+```
+
+## Examples
+
+```ts
+{{> example}}
+```
+
+## Error Codes
+
+{{#each errors}}
+- {{code}}: {{message}}
+{{/each}}
