@@ -8,7 +8,7 @@
 
 > **validateComponent**(`filePath`): `boolean`
 
-Defined in: [validate-docs.ts:10](https://github.com/carlosedupm/ceial-learn-english/blob/03fd734c18ba63bcdb46059cbd1d46b0b4a21577/scripts/validate-docs.ts#L10)
+Defined in: [validate-docs.ts:10](https://github.com/carlosedupm/ceial-learn-english/blob/008f290b346fb88bad2b339201fac382ce8d643a/scripts/validate-docs.ts#L10)
 
 Valida se um componente possui JSDoc com todas as tags requeridas
 
