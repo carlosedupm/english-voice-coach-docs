@@ -52,7 +52,10 @@ Este documento é usado por:
 Desenvolver uma aplicação web interativa para prática de conversação em inglês, utilizando IA para fornecer feedback em tempo real sobre:  
 - Pronúncia (via Whisper API)  
 - Gramática (via GPT-3.5-turbo)  
-- Naturalidade (expressões comuns de nativos americanos)  
+- Naturalidade (expressões comuns de nativos americanos) 
+- Fluência (análise de hesitações e pausas)
+
+
 
 **Configurações-chave**:
 - Tempo de gravação ajustável (5-30 segundos)
