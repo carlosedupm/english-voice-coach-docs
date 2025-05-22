@@ -50,7 +50,16 @@ Este documento é usado por:
 **Nome do Projeto**: English Voice Coach  
 **Objetivo**:  
 Desenvolver uma aplicação web interativa para prática de conversação em inglês, utilizando IA para fornecer feedback em tempo real sobre:  
-- Pronúncia  
-- Gramática  
+- Pronúncia (via Whisper API)  
+- Gramática (via GPT-3.5-turbo)  
 - Naturalidade (expressões comuns de nativos americanos)  
 
+**Configurações-chave**:
+- Tempo de gravação ajustável (5-30 segundos)
+- Feedback imediato após gravação
+- Limites configuráveis por cenário de prática
+
+**Tecnologias-chave**:
+- Next.js para frontend
+- OpenAI API para análise de áudio e texto
+- Sistema de fallback para garantir disponibilidade

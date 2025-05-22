@@ -6,7 +6,29 @@
 ### :robot: AI-Parsable Section
 ```json
 {
-  "changes": [],
+  "changes": [
+    {
+      "type": "feature",
+      "description": "Adicionada análise gramatical via GPT-3.5-turbo",
+      "components": ["PronunciationFeedback", "analyze/route"],
+      "dependencies": ["openai"]
+    },
+    {
+      "type": "improvement",
+      "description": "Sistema de fallback para análise gramatical",
+      "components": ["analyze/route"]
+    },
+    {
+      "type": "feature",
+      "description": "Feedback combinado de pronúncia e gramática",
+      "components": ["PronunciationFeedback"]
+    },
+    {
+      "type": "improvement", 
+      "description": "Tempo de gravação configurável (5-30s)",
+      "components": ["PronunciationFeedback"]
+    }
+  ],
   "last_updated": "{{timestamp}}",
   "schema_version": "2.0"
 }
