@@ -1,3 +1,8 @@
+## Histórico
+- 2025-05-22T01:46:27.763Z: Atualização automática
+- 2025-05-22T01:45:17.045Z: Atualização automática
+- 2025-05-22T01:45:17.045Z: Criação do documento
+
 # Roadmap do Design System
 
 ## 1. Extensão para Outros Componentes
