@@ -31,7 +31,8 @@ category: templates
 "Desenvolver uma plataforma de aprendizado de inglês com feedback em tempo real usando IA para:
 - Avaliação de pronúncia
 - Correção gramatical
-- Sugestões de vocabulário"
+- Sugestões de vocabulário
+- Análise de fluência"
 ```
 
 ### Público-Alvo  
