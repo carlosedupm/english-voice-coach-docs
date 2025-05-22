@@ -32,8 +32,7 @@ category: templates
 - Avaliação de pronúncia
 - Correção gramatical
 - Sugestões de vocabulário
-- Análise de fluência
-- Melhoria contínua"
+- Análise de fluência"
 ```
 
 ### Público-Alvo  
