@@ -54,6 +54,7 @@ Desenvolver uma aplicação web interativa para prática de conversação em ing
 - Gramática (via GPT-3.5-turbo)  
 - Naturalidade (expressões comuns de nativos americanos) 
 - Fluência (análise de hesitações e pausas)
+- Vocabulário (uso de palavras e expressões adequadas)
 
 
 
