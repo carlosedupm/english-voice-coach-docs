@@ -33,8 +33,7 @@ category: templates
 - Correção gramatical
 - Sugestões de vocabulário
 - Análise de fluência
-- Melhoria contínua
-- Personalização de conteúdo"
+- Melhoria contínua"
 ```
 
 ### Público-Alvo  
