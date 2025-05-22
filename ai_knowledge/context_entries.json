@@ -1,0 +1,12 @@
+{
+  "$schema": "./ai-doc-schema.json",
+  "entries": [],
+  "version": "1.0.0",
+  "config": {
+    "auto_update": true,
+    "validation_rules": {
+      "required_fields": ["name", "description", "components"],
+      "allowed_types": ["feature", "bugfix", "refactor"]
+    }
+  }
+}
