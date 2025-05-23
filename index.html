@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>English Voice Coach Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/sidebar-loader.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
+            transition: margin 0.3s ease;
         }
 
         .container {
@@ -47,6 +49,36 @@
         .nav-list a:hover {
             text-decoration: underline;
         }
+
+        .nav-content {
+            display: flex;
+            gap: 30px;
+        }
+
+        .sidebar-preview {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .sidebar-preview h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .sidebar-preview a {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #0366d6;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .sidebar-preview a:hover {
+            background: #0356b6;
+        }
     </style>
 </head>
 
@@ -56,13 +88,19 @@
 
         <div class="nav">
             <h2>Main Sections</h2>
-            <ul class="nav-list">
-                <li><a href="api/index.html">API Documentation</a></li>
-                <li><a href="changelog.md">Changelog</a></li>
-                <li><a href="configuration-guide.md">Configuration Guide</a></li>
-                <li><a href="living/decisions/">Architectural Decisions</a></li>
-                <li><a href="living/development/">Development Guides</a></li>
-            </ul>
+            <div class="nav-content">
+                <ul class="nav-list">
+                    <li><a href="api/index.html">API Documentation</a></li>
+                    <li><a href="changelog.md">Changelog</a></li>
+                    <li><a href="configuration-guide.md">Configuration Guide</a></li>
+                    <li><a href="living/decisions/">Architectural Decisions</a></li>
+                </ul>
+                <div class="sidebar-preview">
+                    <h3>Full Navigation</h3>
+                    <p>For complete documentation structure, see:</p>
+                    <a href="_sidebar.md">Navigation Sidebar</a>
+                </div>
+            </div>
         </div>
 
         <p>Welcome to the English Voice Coach documentation portal. Select a section above to explore.</p>

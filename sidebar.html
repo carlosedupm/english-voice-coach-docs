@@ -1,0 +1,65 @@
+<div class="sidebar">
+    <h3 class="sidebar-title">English Voice Coach</h3>
+    <nav class="sidebar-nav">
+        <ul>
+            <li><a href="index.html">Visão Geral</a></li>
+            <li class="section">Documentação Técnica
+                <ul>
+                    <li><a href="api/index.html">API</a></li>
+                    <li><a href="living/components/">Componentes</a></li>
+                </ul>
+            </li>
+            <li class="section">Decisões Arquiteturais
+                <ul>
+                    <li><a href="living/decisions/adr-001-documentacao-viva.md">ADR-001</a></li>
+                    <li><a href="living/decisions/design-tokens-integration.md">Design Tokens</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<style>
+    .sidebar {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-title {
+        margin-top: 0;
+        color: #333;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+    .sidebar-nav ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .sidebar-nav li {
+        margin: 8px 0;
+    }
+
+    .sidebar-nav a {
+        color: #0366d6;
+        text-decoration: none;
+    }
+
+    .sidebar-nav a:hover {
+        text-decoration: underline;
+    }
+
+    .section {
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .sidebar {
+            margin-bottom: 20px;
+        }
+    }
+</style>
