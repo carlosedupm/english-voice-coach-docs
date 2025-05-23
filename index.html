@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>English Voice Coach Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=api/index.html" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,13 +15,37 @@
         }
 
         .container {
-            text-align: center;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
-        a {
+        .nav {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .nav h2 {
+            margin-top: 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin: 10px 0;
+        }
+
+        .nav-list a {
             color: #0366d6;
             text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-list a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -30,8 +53,19 @@
 <body>
     <div class="container">
         <h1>English Voice Coach Documentation</h1>
-        <p>Redirecting to <a href="api/index.html">API Documentation</a></p>
-        <p>If you are not redirected automatically, please click the link above.</p>
+
+        <div class="nav">
+            <h2>Main Sections</h2>
+            <ul class="nav-list">
+                <li><a href="api/index.html">API Documentation</a></li>
+                <li><a href="changelog.md">Changelog</a></li>
+                <li><a href="configuration-guide.md">Configuration Guide</a></li>
+                <li><a href="living/decisions/">Architectural Decisions</a></li>
+                <li><a href="living/development/">Development Guides</a></li>
+            </ul>
+        </div>
+
+        <p>Welcome to the English Voice Coach documentation portal. Select a section above to explore.</p>
     </div>
 </body>
 
