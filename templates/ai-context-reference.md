@@ -1,0 +1,88 @@
+<nav class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current"></span>
+</nav>
+
+<article class="documentation-content">
+  <h1></h1>
+  
+
+  # Referência de Contexto para IA
+
+## Documento Base
+&#x60;v1_ContextGeneratorPrompt.md&#x60;  
+**Última Atualização**: {{timestamp}}  
+**Versão do Schema**: 2.0
+
+## Trecho Relevante
+&#x60;&#x60;&#x60;markdown
+{{excerpt_from_context_doc}}
+&#x60;&#x60;&#x60;
+
+## Alinhamento Técnico
+| Requisito | Correspondência | Status |
+|-----------|-----------------|--------|
+| {{requirement}} | {{implementation}} | {{status}} |
+
+## Checklist
+- [ ] Versões de tecnologias validadas
+- [ ] Estrutura de endpoints verificada
+- [ ] Métricas de qualidade conferidas
+
+## Solução Proposta
+&#x60;&#x60;&#x60;{{language}}
+{{code_solution}}
+&#x60;&#x60;&#x60;
+
+## Referência Cruzada
+- Seção: #{{section_number}}
+- Issue Relacionada: {{issue_link}}
+- Arquivos Impactados: {{file_paths}}
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>

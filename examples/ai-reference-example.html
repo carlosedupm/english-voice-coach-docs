@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ai-reference-example</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current"></span>
+</nav>
+
+<article class="documentation-content">
+  <h1></h1>
+
+
+  # Exemplo de Referência para IA
+
+## Documento Base
+&#x60;v1_ContextGeneratorPrompt.md&#x60;  
+**Última Atualização**: 2025-05-20T07:10:00Z  
+**Versão do Schema**: 2.0
+
+## Trecho Relevante
+&#x60;&#x60;&#x60;markdown
+## 3. FLUXOS PRINCIPAIS
+### Fluxo de Conversação
+1. Usuário inicia gravação (estado: recording)
+2. Sistema captura áudio via Web Speech API
+3. Áudio é enviado para OpenAI Whisper (estado: transcribing)
+4. Usuário confirma texto transcrito (estado: confirming)
+&#x60;&#x60;&#x60;
+
+## Alinhamento Técnico
+| Requisito | Correspondência | Status |
+|-----------|-----------------|--------|
+| RF01: Captura de voz | Web Speech API implementada | ✅ Validado |
+| RF03: Pontuação pronúncia | Endpoint /api/analysis criado | ⚠️ Em teste |
+
+## Checklist
+- [x] Versões de tecnologias validadas (Next.js 15.3.2)
+- [x] Estrutura de endpoints verificada (/api/recording)
+- [ ] Métricas de qualidade conferidas (em andamento)
+
+## Solução Proposta
+&#x60;&#x60;&#x60;typescript
+// Endpoint para análise de pronúncia
+app.post(&#x27;/api/analysis&#x27;, async (req, res) =&gt; {
+  const { audio, language } = req.body;
+  // Implementação alinhada com RF03
+});
+&#x60;&#x60;&#x60;
+
+## Referência Cruzada
+- Seção: #3.1
+- Issue Relacionada: #123
+- Arquivos Impactados: 
+  - &#x60;pages/api/analysis.ts&#x60;
+  - &#x60;components/VoiceRecorder.tsx&#x60;
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>db-connection</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current"></span>
+</nav>
+
+<article class="documentation-content">
+  <h1></h1>
+
+
+  # MongoDB Connection Setup
+
+## Architecture
+&#x60;&#x60;&#x60;mermaid
+graph TD
+  A[API Routes] --&gt; B[lib/db/mongodb.ts]
+  B --&gt; C[MongoDB Atlas]
+&#x60;&#x60;&#x60;
+
+## Usage
+&#x60;&#x60;&#x60;typescript
+import clientPromise from &#x27;@/lib/db/mongodb&#x27;
+
+const client = await clientPromise
+const db = client.db(&#x27;databaseName&#x27;)
+&#x60;&#x60;&#x60;
+
+## Health Check
+Endpoint: &#x60;GET /api/health/mongodb&#x60;
+Response:
+&#x60;&#x60;&#x60;json
+{
+  &quot;status&quot;: &quot;healthy&quot; | &quot;error&quot;,
+  &quot;message&quot;: &quot;string&quot;
+}
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>

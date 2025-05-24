@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relatório de Componentes Obsoletos</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">Relatório de Componentes Obsoletos</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>Relatório de Componentes Obsoletos</h1>
+
+  <p class="description">Análise de componentes que podem ser removidos do sistema</p>
+
+
+# Relatório de Componentes Obsoletos
+
+## Critérios de Análise
+- Sem referências no código-fonte
+- Última modificação &gt; 6 meses
+- Sem links ativos
+
+## Componentes para Revisão
+1. **Button.md**
+   - Última modificação: 2024-10-15
+   - Referências: 0
+   - Status: ⚠️ Potencialmente obsoleto
+
+2. **PronunciationFeedback.md**  
+   - Última modificação: 2024-08-22
+   - Referências: 0
+   - Status: ❌ Provavelmente obsoleto
+
+3. **Slider.md**
+   - Última modificação: 2024-11-30  
+   - Referências: 0
+   - Status: ⚠️ Potencialmente obsoleto
+
+## Descrição
+Este documento lista componentes que podem estar obsoletos no sistema, baseado em critérios de última modificação e referências no código.
+
+## Exemplos
+&#x60;&#x60;&#x60;markdown
+1. **ComponenteExemplo.md**
+   - Última modificação: 2024-01-01
+   - Referências: 0
+   - Status: ❌ Obsoleto
+&#x60;&#x60;&#x60;
+
+## Uso
+1. Revise cada componente listado
+2. Execute uma das ações abaixo para cada componente confirmado como obsoleto:
+   &#x60;&#x60;&#x60;bash
+   # Remover permanentemente
+   rm -i docs/living/components/[NOME].md
+
+   # Ou arquivar
+   mv docs/living/components/[NOME].md docs/archive/components/
+   &#x60;&#x60;&#x60;
+
+## Integração com IA
+Os componentes listados são analisados automaticamente pelo sistema de documentação, que verifica:
+- Última data de modificação
+- Referências no código-fonte
+- Links ativos
+
+## Próximos Passos
+1. Revise cada componente
+2. Confirme ação para cada um
+3. Atualize a documentação principal
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>

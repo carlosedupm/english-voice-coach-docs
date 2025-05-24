@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADR-002: Integração Design Tokens com Shadcn</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">ADR-002: Integração Design Tokens com Shadcn</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>ADR-002: Integração Design Tokens com Shadcn</h1>
+
+  <p class="description">Padronização do sistema de estilos</p>
+
+
+&lt;!-- TEMPLATE: adr-template-v2.md --&gt;
+
+# ADR-002: Integração Design Tokens com Shadcn
+
+## Descrição
+Este documento descreve a decisão arquitetural para integração entre nosso sistema de Design Tokens e a biblioteca Shadcn/ui, garantindo consistência visual e flexibilidade para temas dinâmicos.
+
+## Status
+✅ Implementado  
+⬜ Obsoleto
+
+## Autores
+- Equipe de Design (Responsável)
+- Equipe de Frontend
+
+## Contexto
+Necessidade de integrar:
+1. Sistema de Design Tokens customizado
+2. Biblioteca Shadcn/ui existente
+3. Requisitos de temas dinâmicos
+
+## Decisão
+Manter os dois sistemas com responsabilidades distintas:
+- **Shadcn**: Estilização base de componentes
+- **Design Tokens**: Lógica de aplicação e valores dinâmicos
+
+## Alternativas Consideradas
+1. **Usar apenas Shadcn**
+   - Prós: Simplicidade
+   - Contras: Limitação em customização
+
+2. **Substituir Shadcn por Design Tokens**
+   - Prós: Controle total
+   - Contras: Retrabalho significativo
+
+## Impactos
+
+## Exemplos
+
+&#x60;&#x60;&#x60;tsx
+// Exemplo de uso combinado
+&lt;Button 
+  className=&quot;bg-primary text-primary-foreground&quot;
+  style={{ 
+    margin: spacing[4],
+    borderRadius: radius.lg
+  }}
+&gt;
+  Botão customizado
+&lt;/Button&gt;
+&#x60;&#x60;&#x60;
+
+## Uso
+
+1. **Componentes Shadcn**: Use as classes padrão para estilos base
+2. **Design Tokens**: Aplique diretamente via style para customizações
+3. **Temas**: Configure no ThemeProvider da aplicação
+
+- ✅ Flexibilidade para casos customizados
+- ✅ Manutenção simplificada
+- ⚠️ Curva de aprendizado inicial
+
+## Exemplo de Uso
+&#x60;&#x60;&#x60;tsx
+// Usando Shadcn para estilos base
+&lt;Button className=&quot;bg-primary text-primary-foreground&quot;&gt;
+
+// Usando Design Tokens para lógica  
+&lt;div style={{ padding: spacing[4] }}&gt;
+&#x60;&#x60;&#x60;
+
+## Temas Customizados
+O sistema permite sobrescrever tokens para criar temas personalizados:
+
+&#x60;&#x60;&#x60;tsx
+// Criando um tema customizado
+const customTheme = theme.custom({
+  primary: {
+    500: &#x27;#FF5722&#x27; // laranja
+  },
+  neutral: {
+    100: &#x27;#F5F5F5&#x27;
+  }
+});
+
+// Aplicando o tema
+&lt;ThemeProvider theme={customTheme}&gt;
+  &lt;App /&gt;
+&lt;/ThemeProvider&gt;
+&#x60;&#x60;&#x60;
+
+### Regras:
+1. Somente cores podem ser sobrescritas
+2. A estrutura de tokens deve ser mantida
+3. Valores não especificados usam o padrão light
+
+## Integração com IA
+O sistema de Design Tokens foi otimizado para trabalhar com ferramentas de IA através de:
+- Padronização semântica dos nomes de tokens
+- Documentação estruturada para geração automática de temas
+- Suporte a plugins de design assistido por IA
+
+## Registro de Mudanças
+| Data       | Versão | Alteração               |
+|------------|--------|-------------------------|
+| 2025-05-15 | 1.0    | Decisão inicial         |
+| 2025-05-20 | 1.1    | Adequação ao padrão ADR |
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>

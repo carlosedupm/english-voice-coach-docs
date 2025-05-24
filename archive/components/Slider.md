@@ -1,0 +1,162 @@
+<nav class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">Slider</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>Slider</h1>
+  
+  <p class="description">Componente deslizante para seleção de valores</p>
+
+  
+&gt; Documento Base: &#x60;v1_ContextGeneratorPrompt.md&#x60;  
+&gt; **Última Atualização**: 20/05/2025, 18:35 (UTC)
+
+# Slider
+
+## Purpose
+Componente para seleção de valores em um intervalo com:
+- Controle preciso via mouse/toque
+- Feedback visual imediato
+- Acessibilidade integrada
+
+## AI Integration
+Este componente utiliza:
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de acessibilidade (pendente)
+
+- IA para ajuste automático de sensibilidade baseado no dispositivo
+- Detecção de padrões de uso para otimizar experiência
+- Análise de contraste para garantir visibilidade
+
+## Props
+&#x60;&#x60;&#x60;ts
+interface SliderProps extends Omit&lt;React.InputHTMLAttributes&lt;HTMLInputElement&gt;, &#x27;size&#x27;&gt; {
+  /** Variante do slider */
+  variant?: &quot;default&quot; | &quot;range&quot;
+  /** Tamanho do componente */
+  sliderSize?: &quot;sm&quot; | &quot;md&quot; | &quot;lg&quot;
+  /** Mostrar valor atual */
+  showValue?: boolean
+  /** Valor controlado */
+  value?: number
+}
+&#x60;&#x60;&#x60;
+
+## Usage
+&#x60;&#x60;&#x60;tsx
+import { Slider } from &quot;@/components/ui/slider&quot;
+
+function VolumeControl() {
+  const [volume, setVolume] = useState(50)
+  
+  return (
+    &lt;Slider
+      value={volume}
+      onChange={(val) =&gt; setVolume(val)}
+      showValue
+    /&gt;
+  )
+}
+&#x60;&#x60;&#x60;
+
+## Examples
+
+### Controle Básico
+&#x60;&#x60;&#x60;tsx
+&lt;Slider /&gt;
+&#x60;&#x60;&#x60;
+
+### Controle de Volume
+&#x60;&#x60;&#x60;tsx
+const [volume, setVolume] = useState(30)
+&lt;Slider 
+  value={volume}
+  onChange={setVolume}
+  showValue
+/&gt;
+&#x60;&#x60;&#x60;
+
+### Faixa de Valores
+&#x60;&#x60;&#x60;tsx
+&lt;Slider variant=&quot;range&quot; /&gt;
+&#x60;&#x60;&#x60;
+
+## Features
+- **Acessibilidade**:
+  - Compatível com ARIA
+  - Navegação por teclado
+  - Rótulos para leitores de tela
+- **Customização**:
+  - 3 tamanhos pré-definidos
+  - 2 variantes visuais
+  - Estilização via CSS
+- **Integração**:
+  - Funciona com React Hook Form
+  - Suporte a validação
+
+## Testing
+&#x60;&#x60;&#x60;tsx
+it(&#x27;updates value when dragged&#x27;, () =&gt; {
+  const onChange = jest.fn()
+  render(&lt;Slider onChange={onChange} /&gt;)
+  
+  fireEvent.mouseDown(screen.getByRole(&#x27;slider&#x27;), { clientX: 0 })
+  fireEvent.mouseMove(document, { clientX: 100 })
+  
+  expect(onChange).toHaveBeenCalled()
+})
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
