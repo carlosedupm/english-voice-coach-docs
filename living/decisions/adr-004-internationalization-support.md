@@ -1,0 +1,161 @@
+<nav class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">ADR-004: Suporte a Internacionalização (i18n)</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>ADR-004: Suporte a Internacionalização (i18n)</h1>
+  
+
+  
+# ADR-004: Suporte a Internacionalização (i18n)
+
+## Status
+✅ Implementado
+
+## Contexto
+O sistema English Voice Coach precisa suportar múltiplos idiomas para:
+- Ampliar o alcance para usuários não nativos de inglês
+- Permitir que usuários escolham sua língua preferida
+- Apresentar toda a interface no idioma selecionado
+
+## Decisão
+Implementamos internacionalização usando:
+- Bibliotecas: i18next + react-i18next + i18next-browser-languagedetector
+- Estrutura de pastas:
+  &#x60;&#x60;&#x60;
+  /src/locales
+    /en
+      translation.json
+    /pt-BR
+      translation.json
+    /es
+      translation.json
+  &#x60;&#x60;&#x60;
+- Estratégia:
+  - Detecção automática do idioma do navegador
+  - Fallback para inglês (en)
+  - Solução compatível com React Server Components
+
+## Impactos
+✅ Positivos:
+- Melhor experiência para usuários internacionais
+- Base de código preparada para novas localizações
+- Solução otimizada para Next.js
+
+⚠️ Negativos:
+- Aumento no tamanho do bundle (~15kb gzipped)
+- Complexidade adicional no desenvolvimento
+
+## Descrição Técnica
+1. Configuração em &#x60;i18n-config.ts&#x60;:
+&#x60;&#x60;&#x60;ts
+import i18n from &#x27;i18next&#x27;;
+import LanguageDetector from &#x27;i18next-browser-languagedetector&#x27;;
+import { initReactI18next } from &#x27;react-i18next&#x27;;
+
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: &#x27;en&#x27;,
+    resources: {
+      en: { translation: enTranslations },
+      es: { translation: esTranslations },
+      &#x27;pt-BR&#x27;: { translation: ptBRTranslations }
+    }
+  });
+&#x60;&#x60;&#x60;
+
+2. Provider client-side em &#x60;i18n/client.tsx&#x60;:
+&#x60;&#x60;&#x60;tsx
+&#x27;use client&#x27;;
+import { I18nextProvider } from &#x27;react-i18next&#x27;;
+import i18n from &#x27;./i18n-config&#x27;;
+
+export function I18nProviderClient({ children }) {
+  return &lt;I18nextProvider i18n={i18n}&gt;{children}&lt;/I18nextProvider&gt;;
+}
+&#x60;&#x60;&#x60;
+
+## Exemplos
+&#x60;translation.json&#x60; (pt-BR):
+&#x60;&#x60;&#x60;json
+{
+  &quot;welcome&quot;: &quot;Bem-vindo ao English Voice Coach&quot;,
+  &quot;practice&quot;: {
+    &quot;title&quot;: &quot;Praticar Pronúncia&quot;,
+    &quot;button&quot;: &quot;Iniciar Gravação&quot;
+  }
+}
+&#x60;&#x60;&#x60;
+
+Uso em componentes:
+&#x60;&#x60;&#x60;tsx
+&#x27;use client&#x27;;
+import { useTranslation } from &#x27;react-i18next&#x27;;
+
+function Header() {
+  const { t } = useTranslation();
+  return &lt;h1&gt;{t(&#x27;welcome&#x27;)}&lt;/h1&gt;;
+}
+&#x60;&#x60;&#x60;
+
+## Próximos Passos
+- Adicionar mais idiomas conforme demanda
+- Implementar seletor de idioma na UI
+- Adicionar testes de internacionalização
+
+## Integração com IA
+O sistema de i18n será usado por:
+- Componentes de UI para renderização dinâmica
+- Ferramentas de documentação automática
+- Sistemas de análise de feedback multilíngue
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>

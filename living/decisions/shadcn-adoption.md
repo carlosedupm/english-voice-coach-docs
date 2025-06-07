@@ -1,0 +1,163 @@
+<nav class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">ADR-003: Adoção do ShadCN UI</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>ADR-003: Adoção do ShadCN UI</h1>
+  
+  <p class="description">Padronização de componentes UI</p>
+
+  
+&lt;!-- TEMPLATE: adr-template-v2.md --&gt;
+
+# ADR-003: Adoção do ShadCN UI
+
+## Descrição
+Este documento formaliza a decisão de adoção da biblioteca ShadCN UI como base para nossos componentes, garantindo consistência visual, acessibilidade e velocidade de desenvolvimento.
+
+## Status
+✅ Implementado  
+⬜ Obsoleto
+
+## Autores
+- Equipe de Frontend (Responsável)
+- Equipe de UX
+
+## Contexto
+Necessidade de padrão consistente para componentes UI que:
+- Forneça acessibilidade out-of-the-box
+- Permita customização via tokens
+- Mantenha consistência visual
+- Acelere desenvolvimento
+
+## Decisão
+Usar ShadCN como biblioteca base para:
+- Componentes fundamentais (Button, Input, etc)
+- Sistema de theming
+- Padrões de acessibilidade
+- Gerenciamento de variants
+
+## Alternativas Consideradas
+1. **Manter componentes customizados**
+   - Prós: Controle total
+   - Contras: Alto custo de manutenção
+
+2. **Usar outra biblioteca (MUI, Chakra)**
+   - Prós: Comunidades grandes
+   - Contras: Menos flexibilidade
+
+## Impactos
+- ✅ Redução de código customizado
+- ✅ Documentação automática
+- ⚠️ Curva de aprendizado inicial
+
+## Exemplos
+&#x60;&#x60;&#x60;tsx
+// Exemplo básico de uso
+&lt;Button variant=&quot;outline&quot; size=&quot;sm&quot;&gt;
+  Botão secundário
+&lt;/Button&gt;
+
+// Exemplo com customização
+&lt;Button 
+  className=&quot;bg-brand-500 hover:bg-brand-600&quot;
+  onClick={handleClick}
+&gt;
+  Ação principal
+&lt;/Button&gt;
+&#x60;&#x60;&#x60;
+
+## Uso
+1. Instalação via &#x60;npx shadcn-ui@latest add button&#x60;
+2. Importação de componentes: &#x60;import { Button } from &quot;@/components/ui/button&quot;&#x60;
+3. Customização via:
+   - Variants pré-definidas (primary, outline, etc)
+   - Classes CSS com &#x60;cn()&#x60; helper
+   - Sobrescrita de tokens
+
+Documentação completa disponível em: &#x60;living/components&#x60;
+
+## Benefícios
+- Redução de código customizado
+- Documentação automática
+- Fácil manutenção
+- Comunidade ativa
+
+## Implementação
+1. Componentes devem seguir estrutura:
+&#x60;&#x60;&#x60;tsx
+import { Button } from &quot;@/components/ui/button&quot;
+&#x60;&#x60;&#x60;
+
+2. Customizações via &#x60;className&#x60; usando &#x60;cn()&#x60;:
+&#x60;&#x60;&#x60;tsx
+&lt;Button className={cn(&quot;custom-class&quot;, variant &amp;&amp; &#x60;variant-${variant}&#x60;)}&gt;
+&#x60;&#x60;&#x60;
+
+3. Documentação em &#x60;living/components&#x60;
+
+## Componentes Implementados
+- Button (src/components/ui/button.tsx)
+- Input (src/components/ui/input.tsx)
+
+## Integração com IA
+A adoção do ShadCN permite:
+- Geração automática de componentes via IA
+- Documentação assistida para padrões de uso
+- Plugins para Figma/Storybook com suporte a IA
+- Compatibilidade com ferramentas de acessibilidade automatizada
+
+## Registro de Mudanças
+| Data       | Versão | Alteração               |
+|------------|--------|-------------------------|
+| 2025-05-17 | 1.0    | Decisão inicial         |
+| 2025-05-20 | 1.1    | Adequação ao padrão ADR |
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>

@@ -1,0 +1,164 @@
+<nav class="breadcrumbs">
+  <a href="/index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">PronunciationFeedback</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>PronunciationFeedback</h1>
+  
+  <p class="description">Componente que fornece feedback de pronúncia comparando fala do usuário com texto alvo usando Whisper API</p>
+
+  
+&gt; Documento Base: &#x60;v1_ContextGeneratorPrompt.md&#x60;  
+&gt; **Última Atualização**: 20/05/2025, 18:35 (UTC)
+
+# PronunciationFeedback
+
+## AI Integration
+Este componente utiliza:
+- Whisper API para transcrição de áudio
+- Modelos de NLP para análise de pronúncia
+- Comparação fonética baseada em IA
+
+## Checklist
+- [x] Documentação base completa
+- [x] Exemplos de uso
+- [x] Referência ao documento base
+- [x] Timestamp de atualização
+- [x] Seções obrigatórias
+- [ ] Testes de integração (pendente)
+
+&#x60;&#x60;&#x60;tsx
+import { PronunciationFeedback } from &#x27;@/components/PronunciationFeedback&#x27;;
+
+function Example() {
+  return (
+    &lt;PronunciationFeedback 
+      targetText=&quot;Hello world&quot; 
+    /&gt;
+  );
+}
+&#x60;&#x60;&#x60;
+
+## Features
+
+- **Type**: Functional Component
+- **Variants**: N/A
+- **Props**:
+  &#x60;&#x60;&#x60;ts
+  interface PronunciationFeedbackProps {
+    /** Texto alvo para comparação de pronúncia */
+    targetText: string;
+  }
+  &#x60;&#x60;&#x60;
+
+## Usage
+
+&#x60;&#x60;&#x60;tsx
+function PracticePage() {
+  const phrases = [&quot;Good morning&quot;, &quot;How are you?&quot;];
+  const [currentPhrase, setCurrentPhrase] = useState(0);
+
+  return (
+    &lt;div&gt;
+      &lt;PronunciationFeedback 
+        targetText={phrases[currentPhrase]}
+      /&gt;
+      &lt;button onClick={() =&gt; setCurrentPhrase((i) =&gt; (i + 1) % phrases.length)}&gt;
+        Next Phrase
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+&#x60;&#x60;&#x60;
+
+## Examples
+
+### Uso Básico
+&#x60;&#x60;&#x60;tsx
+&lt;PronunciationFeedback targetText=&quot;The quick brown fox&quot; /&gt;
+&#x60;&#x60;&#x60;
+
+### Com Controle de Frases
+&#x60;&#x60;&#x60;tsx
+const phrases = [&quot;I love programming&quot;, &quot;React is awesome&quot;];
+const [index, setIndex] = useState(0);
+
+&lt;PronunciationFeedback 
+  targetText={phrases[index]}
+/&gt;
+&lt;button onClick={() =&gt; setIndex(i =&gt; (i + 1) % phrases.length)}&gt;
+  Next
+&lt;/button&gt;
+&#x60;&#x60;&#x60;
+
+## Implementation Details
+
+- Usa MediaRecorder API para capturar áudio
+- Integra com Whisper API via endpoint &#x60;/api/pronunciation/analyze&#x60;
+- Implementa retry automático para falhas de rede
+- Inclui tratamento de erros detalhado
+- Fornece feedback visual durante gravação
+
+## Error Handling
+
+O componente trata os seguintes cenários de erro:
+- Falha de conexão com backend
+- Timeout de requisição
+- Acesso negado ao microfone
+- Erros na análise de pronúncia
+
+## Analytics
+
+Eventos registrados:
+- &#x60;pronunciation_analysis_started&#x60;
+- &#x60;pronunciation_analysis_success&#x60;
+- &#x60;pronunciation_analysis_failed&#x60;
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>

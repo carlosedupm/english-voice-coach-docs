@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Template Principal do Projeto</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">Template Principal do Projeto</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>Template Principal do Projeto</h1>
+
+  <p class="description">Modelo master para documentação de projetos seguindo regras .cline</p>
+
+
+# Template Principal do Projeto  
+*(v2.0 - Integrado com .cline e AI)*  
+&lt;!-- AI-TEMPLATE:project-context --&gt;  
+
+&#x60;&lt;!-- CLINE-RULES:project-master --&gt;&#x60;
+
+---
+
+## **1. VISÃO &amp; AI INTEGRATION**  
+&#x60;&#x60;&#x60;json
+{
+  &quot;ai_usage&quot;: {
+    &quot;context&quot;: &quot;Este template gera documentação de projetos&quot;,
+    &quot;validation&quot;: [&quot;architecture&quot;, &quot;flows&quot;, &quot;tech_stack&quot;],
+    &quot;rules&quot;: &quot;../.cline/rules/project-rules.cl&quot;
+  }
+}
+
+### Objetivo Principal  
+&lt;!-- Descreva em 1-2 parágrafos o propósito central do projeto --&gt;  
+[Descrição concisa do propósito do projeto]  
+
+**Exemplo (.cline validated):**  
+&#x60;&#x60;&#x60;text
+&quot;Desenvolver uma plataforma de aprendizado de inglês com feedback em tempo real usando IA para:
+- Avaliação de pronúncia
+- Correção gramatical
+- Sugestões de vocabulário
+- Análise de fluência&quot;
+&#x60;&#x60;&#x60;
+
+### Público-Alvo  
+&lt;!-- Liste personas principais e necessidades específicas --&gt;  
+- [Persona 1]: [Necessidades específicas]  
+- [Persona 2]: [Casos de uso]  
+
+### Diferenciais Competitivos  
+&lt;!-- Máximo 3 diferenciais principais --&gt;  
+1. [Diferencial 1]  
+2. [Diferencial 2]  
+
+---
+
+## **2. ARQUITETURA TÉCNICA**  
+&#x60;&#x60;&#x60;mermaid
+graph TD
+    A[Front-end] --&gt; B[APIs]
+    B --&gt; C[Serviços]
+    C --&gt; D[Banco de Dados]
+&#x60;&#x60;&#x60;
+&lt;!-- Atualize o diagrama conforme sua stack --&gt;  
+
+### Stack Tecnológica (.cline validated)  
+| Camada         | Tecnologias               | Versão   | Justificativa              | Regras Aplicadas          |
+|----------------|---------------------------|----------|----------------------------|---------------------------|
+| Front-end      | Next.js/React             | 15.3.2   | SSR, Rota API integrada    | next-version-rule         |
+| Back-end       | Node.js/API Routes        | 20.x     | Compatibilidade com Vercel | node-version-rule         |
+| IA             | OpenAI Whisper            | 4.100.0  | Transcrição precisa        | api-key-rotation-rule     |
+
+**Exemplo de Validação:**  
+&#x60;&#x60;&#x60;clinerules
+rule next-version-rule
+  min_version: &quot;15.0.0&quot;
+  max_version: &quot;16.0.0&quot;
+&#x60;&#x60;&#x60;
+
+---
+
+## **3. FLUXOS CRÍTICOS**  
+### Fluxo Principal  
+&#x60;&#x60;&#x60;mermaid
+stateDiagram-v2
+    [*] --&gt; Estado1
+    Estado1 --&gt; Estado2: Ação
+&#x60;&#x60;&#x60;
+&lt;!-- Descreva os estados principais do sistema --&gt;  
+
+### Modelo de Dados Principal  
+&#x60;&#x60;&#x60;json
+{
+  &quot;entidade&quot;: {
+    &quot;campo&quot;: &quot;tipo&quot;,
+    &quot;relacionamentos&quot;: []
+  }
+}
+&#x60;&#x60;&#x60;
+
+---
+
+## **4. PADRÕES &amp; VALIDAÇÃO**  
+### Componentes React (.cline rules)  
+&#x60;&#x60;&#x60;typescript
+/**
+ * @rule component-props-validation
+ * @example &lt;Button primary /&gt;
+ */
+interface ComponentProps {
+  /** 
+   * @description Texto principal 
+   * @rule required
+   * @example &quot;Enviar&quot;
+   */
+  title: string;
+
+  /** 
+   * @default false 
+   * @rule boolean-required
+   */
+  disabled?: boolean;
+}
+&#x60;&#x60;&#x60;
+
+### Validação Contínua  
+&#x60;&#x60;&#x60;mermaid
+graph LR
+    A[Commit] --&gt; B[Lint .cline]
+    B --&gt; C[Testes]
+    C --&gt; D[Deploy]
+&#x60;&#x60;&#x60;
+
+### APIs REST  
+&#x60;&#x60;&#x60;yaml
+paths:
+  /api/endpoint:
+    get:
+      parameters:
+        - name: param
+          in: query
+          required: true
+&#x60;&#x60;&#x60;
+
+---
+
+## **5. GOVERNANÇA**  
+### Ciclo de Vida do Documento  
+&lt;!-- Checklist de gatilhos para atualização --&gt;  
+- [ ] Novo módulo adicionado  
+- [ ] Mudança de arquitetura  
+- [ ] Atualização de tecnologias principais  
+
+### Responsáveis  
+| Área          | Owner           |
+|---------------|-----------------|
+| Front-end     | [@dev1]         |
+| Back-end      | [@dev2]         |
+
+---
+
+**CONFORMIDADE**  
+&#x60;&#x60;&#x60;json
+{
+  &quot;version&quot;: &quot;2.0&quot;,
+  &quot;cline_compatible&quot;: true,
+  &quot;required_sections&quot;: [&quot;vision&quot;, &quot;architecture&quot;, &quot;standards&quot;],
+  &quot;validation&quot;: {
+    &quot;last_run&quot;: &quot;2025-05-18T02:11:00Z&quot;,
+    &quot;passed&quot;: true,
+    &quot;warnings&quot;: [
+      &quot;Atualizar exemplos de fluxos&quot;
+    ]
+  }
+}
+&#x60;&#x60;&#x60;
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>

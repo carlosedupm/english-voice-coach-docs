@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Documento de Contexto do Projeto: English Voice Coach</title>
+    <link rel="stylesheet" href="api/assets/style.css">
+</head>
+<body>
+<nav class="breadcrumbs">
+  <a href="index.html">Home</a>
+  <span class="separator">/</span>
+  <span class="current">Documento de Contexto do Projeto: English Voice Coach</span>
+</nav>
+
+<article class="documentation-content">
+  <h1>Documento de Contexto do Projeto: English Voice Coach</h1>
+
+  <p class="description">Documento base para geração de contexto em consultas com IA</p>
+
+
+# **Documento de Contexto do Projeto: English Voice Coach**  
+*(Para uso em consultas com IA, desenvolvimento e tomada de decisões)*  
+
+## Descrição
+Este documento serve como fonte de contexto para:
+- Desenvolvimento de features
+- Geração de prompts para IA
+- Tomada de decisões técnicas
+
+**Última Atualização**: 20/05/2025, 17:50 (UTC)
+
+## Documento Base
+&#x60;v1_ContextGeneratorPrompt.md&#x60;
+
+## Trecho Relevante
+[Inserir trecho relevante para a validação atual]
+
+## Checklist
+- [x] Verificar seções obrigatórias
+- [x] Confirmar referência ao documento base  
+- [x] Atualizar timestamp
+
+## Exemplos
+&#x60;&#x60;&#x60;markdown
+# Exemplo de Uso para IA:
+&quot;Baseado no documento v1_ContextGeneratorPrompt.md, gere um prompt para...&quot;
+&#x60;&#x60;&#x60;
+
+## Uso
+1. Referencie este documento em consultas com IA
+2. Atualize periodicamente conforme o projeto evolui
+3. Utilize como base para decisões técnicas
+
+## Integração com IA
+Este documento é usado por:
+- Sistemas de geração de prompts
+- Modelos de contexto para desenvolvimento
+- Ferramentas de documentação automática
+
+---
+
+# **1. Visão Geral**  
+**Nome do Projeto**: English Voice Coach  
+**Objetivo**:  
+Desenvolver uma aplicação web interativa para prática de conversação em inglês, utilizando IA para fornecer feedback em tempo real sobre:  
+- Pronúncia (via Whisper API)  
+- Gramática (via GPT-3.5-turbo)  
+- Naturalidade (expressões comuns de nativos americanos) 
+- Fluência (análise de hesitações e pausas)
+- Vocabulário (uso de palavras e expressões adequadas)
+- Entonação (análise de variações de tom e ritmo)
+- Clareza (análise de dicção e articulação)
+- Coerência (análise de estrutura e lógica do discurso)
+
+
+
+
+**Configurações-chave**:
+- Tempo de gravação ajustável (5-30 segundos)
+- Feedback imediato após gravação
+- Limites configuráveis por cenário de prática
+
+**Tecnologias-chave**:
+- Next.js para frontend
+- OpenAI API para análise de áudio e texto
+- Sistema de fallback para garantir disponibilidade
+- i18next para internacionalização (suporte a múltiplos idiomas)
+
+## Internacionalização
+O sistema suporta múltiplos idiomas com:
+- Detecção automática do idioma do navegador
+- Opção de seleção manual nas configurações
+- Fallback para inglês (en)
+- Estrutura de traduções em JSON (locales/[lang]/translation.json)
+
+**Idiomas suportados inicialmente**:
+- Inglês (en)
+- Português Brasileiro (pt-BR)
+- Espanhol (es)
+
+**Exemplo de uso**:
+&#x60;&#x60;&#x60;tsx
+import { useTranslation } from &#x27;react-i18next&#x27;;
+
+function Welcome() {
+  const { t } = useTranslation();
+  return &lt;h1&gt;{t(&#x27;welcome_message&#x27;)}&lt;/h1&gt;;
+}
+&#x60;&#x60;&#x60;
+
+**Integração com IA**:
+- Modelos de linguagem podem sugerir traduções
+- Análise de qualidade de traduções
+- Geração automática de chaves de tradução
+
+</article>
+
+<style>
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.separator {
+  color: var(--text-tertiary);
+}
+
+.current {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.documentation-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+</style>
+</body>
+</html>
